@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <section class="banner-section">
+      <div class="container">
+        <!-- header section start  -->
+        <header>
+          <img
+            src="data:image/png;base64,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"
+            alt=""
+          />
+          <ul class="nav">
+            <li><a href="javascript:void(0);">Home</a></li>
+            <li><a href="javascript:void(0);">About</a></li>
+            <li><a href="javascript:void(0);">Services</a></li>
+            <li><a href="javascript:void(0);">Dentist</a></li>
+            <li><a href="javascript:void(0);">Blog</a></li>
+            <li><a href="javascript:void(0);">Contact</a></li>
+          </ul>
+        </header>
+        <!-- header section end  -->
+
+        <!-- banner block start -->
+        <div class="banner-blk">
+          <div class="banner-content">
+            <h2>Better Life Through</h2>
+            <h1>Better Dentistry</h1>
+            <p>
+              Join us to a fun and friendly dental environment. Our
+              professionals are working so hard to see smile on your face that
+              you deserve! We are dedicated about our duties.
+            </p>
+            <div class="btn-blk">
+              <button class="button" style="margin-right: 20px">
+                Appointment
+              </button>
+              <a href="javascript:void(0);" class="button secondary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+          <div class="banner-img">
+            <div class="s2">
+              <img src="../s2.png" alt />
+            </div>
+            <div class="s3">
+              <img src="../s3.png" alt />
+            </div>
+            <div class="s4">
+              <img src="../s4.png" alt />
+            </div>
+          </div>
+        </div>
+        <!-- banner block end -->
+      </div>
+    </section>
+    <div class="container">
+      <section class="service-section">
+        <div class="service-card">
+          <img src="../s5.png" alt="" />
+          <h3>Easy Appointment</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            sequi laborum nemo corrupti suscipit facilis.
+          </p>
+        </div>
+        <div class="service-card">
+          <img src="../s6.png" alt="" />
+          <h3>Easy Appointment</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            sequi laborum nemo corrupti suscipit facilis.
+          </p>
+        </div>
+        <div class="service-card">
+          <img src="../s7.png" alt="" />
+          <h3>Easy Appointment</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            sequi laborum nemo corrupti suscipit facilis.
+          </p>
+        </div>
+      </section>
+      <section class="family-section">
+        <div class="s8">
+          <img src="../s8.png" alt />
+        </div>
+        <div class="s9">
+          <img src="../s9.png" alt />
+        </div>
+        <div class="family-content">
+          <div style="margin-bottom: 50px">
+            <h1>Welcome to a Family</h1>
+            <p>
+              Welcome to Datobbo Dental represents everything going to dentist
+              necessary. We have upgraded your dreaded dentist appointment and
+              transformed it into a relaxing.
+            </p>
+            <a href="javascript:void(0);">About Us</a>
+          </div>
+          <div class="number-blk">
+            <div class="number-items">
+              <div>
+                <h3>500+</h3>
+                <p>Happy Patients</p>
+              </div>
+              <div>
+                <h3>25+</h3>
+                <p>Years Experience</p>
+              </div>
+            </div>
+            <div style="width: 1px; background-color: #ccc"></div>
+            <div class="number-items">
+              <div>
+                <h3>88+</h3>
+                <p>Qualified Doctors</p>
+              </div>
+              <div>
+                <h3>55+</h3>
+                <p>Dental Awards</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="treatment-section">
+      <div class="container">
+        <div class="section-title">
+          <h1>Treatment</h1>
+        </div>
+        <div class="treatment-row">
+          <div class="treatment-card">
+            <img src="../r1.png" alt />
+            <h3>Complete Dentistry</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printings and type and
+              setting for content
+            </p>
+            <a herf="javascript:void(0);"> Read More</a>
+          </div>
+          <div class="treatment-card">
+            <img src="../r2.png" alt />
+            <h3>Dental Selants</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printings and type and
+              setting for content
+            </p>
+            <a herf="javascript:void(0);"> Read More</a>
+          </div>
+          <div class="treatment-card">
+            <img src="../r3.png" alt />
+            <h3>Dental Dictionary</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printings and type and
+              setting for content
+            </p>
+            <a herf="javascript:void(0);"> Read More</a>
+          </div>
+          <div class="treatment-card">
+            <img src="../r4.png" alt />
+            <h3>Dental Implants</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printings and type and
+              setting for content
+            </p>
+            <a herf="javascript:void(0);"> Read More</a>
+          </div>
+          <div class="treatment-card">
+            <img src="../r5.png" alt />
+            <h3>Oral Surgery</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printings and type and
+              setting for content
+            </p>
+            <a herf="javascript:void(0);"> Read More</a>
+          </div>
+          <div class="treatment-card">
+            <img src="../r6.png" alt />
+            <h3>General Dentistry</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printings and type and
+              setting for content
+            </p>
+            <a herf="javascript:void(0);"> Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="our-dentist-section">
+      <div class="container">
+        <div class="section-title-one">
+          <h1>Our Dentists</h1>
+        </div>
+        <div class="doctor-profile">
+          <div class="single-doctor">
+            <div class="profile-card">
+              <div class="profile-img">
+                <img src="../m1.png" alt />
+              </div>
+              <div class="doctor-info">
+                <h3>Darry Milin</h3>
+                <span>Oral Surgeon</span>
+              </div>
+              <div style="height: 1px; background-color: #ccc"></div>
+              <div class="social-icon"></div>
+            </div>
+          </div>
+          <div class="single-doctor">
+            <div class="profile-card">
+              <div class="profile-img">
+                <img src="../m2.png" alt />
+              </div>
+              <div class="doctor-info">
+                <h3>Salman Ahmed</h3>
+                <span>Oral Surgeon</span>
+              </div>
+              <div style="height: 1px; background-color: #ccc"></div>
+              <div class="social-icon"></div>
+            </div>
+          </div>
+          <div class="single-doctor">
+            <div class="profile-card">
+              <div class="profile-img">
+                <img src="../m3.png" alt />
+              </div>
+              <div class="doctor-info">
+                <h3>Santa Binte</h3>
+                <span>Oral Surgeon</span>
+              </div>
+              <div style="height: 1px; background-color: #ccc"></div>
+              <div class="social-icon"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dentist">
+          <a class="btn-link doctor-btn-link">View all Dentists </a>
+        </div>
+      </div>
+    </section>
+    <section class="appointment-section">
+      <div class="container">
+        <div class="app-row">
+          <div class="appointment-sec-form">
+            <div class="section-title-one">
+              <h1>Request Appointment</h1>
+            </div>
+            <div class="appointment-form">
+              <form class="fo-row">
+                <div class="appointment-details">
+                  <input type="text" value="Name" />
+                </div>
+                <div class="appointment-details">
+                  <input type="email" value="Email" />
+                </div>
+                <div class="appointment-details">
+                  <input type="text" value="Phone" />
+                </div>
+                <div class="appointment-details">
+                  <input type="text" value="Subject" />
+                </div>
+                <div class="appointment-details-1">
+                  <textarea>Message</textarea>
+                </div>
+                <button class="submit-btn" type="submit">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gallery-one">
+      <div class="container">
+        <div class="gal-row">
+          <div class="text-center">
+            <div class="section-title-1">
+              <h1>Our Gallery</h1>
+            </div>
+          </div>
+        </div>
+        <div class="im-row">
+          <div class="gallery">
+            <div class="single-gallery-item">
+              <div clas=" react-fancybox">
+                <div class="thumbnail">
+                  <img src="g1.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery">
+            <div class="single-gallery-item">
+              <div clas=" react-fancybox">
+                <div class="thumbnail">
+                  <img src="g2.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery">
+            <div class="single-gallery-item">
+              <div clas=" react-fancybox">
+                <div class="thumbnail">
+                  <img src="g3.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery">
+            <div class="single-gallery-item">
+              <div clas=" react-fancybox">
+                <div class="thumbnail">
+                  <img src="g4.jpg" width="745px" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery">
+            <div class="single-gallery-item">
+              <div clas=" react-fancybox">
+                <div class="thumbnail">
+                  <img src="g5.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimonial-one">
+      <div class="container">
+        <div class="row">
+          <div class="test-text-center">
+            <div class="section-title-one">
+              <h1>Testimonials</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row-align-item-center">
+          <div class="testi">
+            <div class="single-client-box">
+              <div class="client-card">
+                <div class="client-img">
+                  <img src="testi1.png" alt="" />
+                </div>
+                <div class="test-info">
+                  <h3>Aliceano Colby</h3>
+                  <span>CEO of Prime IT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-1">
+            <div class="single-review-item">
+              <h5>Awesome Work</h5>
+              <p>
+                “They really took my individual case to heart. Their team is
+                very helpful. They all work together in an impressive way to
+                make sure that my needs were met and I walked out pain free.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="blog-section">
+      <div class="container">
+        <div class="b-row">
+          <div class="b-text-center">
+            <div class="section-tit">
+              <h1>Latest blog</h1>
+            </div>
+          </div>
+        </div>
+        <div class="bl-row">
+          <div class="blog-profile">
+                <img src="blog1.jpg"  alt="" />
+              <div class="card-content">
+                <h3>
+                  <a href="/page/blogdetails"
+                    >Maximize Your 2019 Dental Insurance with lots of
+                    Benefits</a>
+                </h3>
+                <div class="card-meta">
+                  <div class="meta-1">
+                    <span> Post by: Salman </span>
+                  </div>
+                  <div class="meta-2">
+                    <span> 12 Oct, 2019 </span>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="blog-profile">
+                <img src="blog2.jpg" alt="" />
+              <div class="card-content">
+                <h3>
+                  <a href="/page/blogdetails"
+                    >Are Your Teeth Making You Old? Are You Surprised!</a
+                  >
+                </h3>
+                <div class="card-meta">
+                  <div class="meta-1">
+                    <span> Post by: admin </span>
+                  </div>
+                  <div class="meta-2">
+                    <span> 14 Oct, 2019 </span>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="blog-profile">
+             
+                <img src="blog3.jpg" alt="" />
+
+              <div class="card-content">
+                <h3>
+                  <a href="/page/blogdetails"
+                    >Dental Implants: The Next Best T hing to Get Natural
+                    Teeth</a
+                  >
+                </h3>
+                <div class="card-meta">
+                  <div class="meta-1">
+                    <span> Post by: Salman </span>
+                  </div>
+                  <div class="meta-2">
+                    <span> 10 Jan, 2020 </span>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="appointment-promo-section">
+      <div class="container">
+        <div class="row-bg">
+          <div class="promo-content">
+            <h1>Request your appointment and start your smile makeover!</h1>
+            <a href=".#" class="theme-btn"> Request Appointment</a>
+          </div>
+          <div class="promo-banner">
+            <img src="doctor-nars.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="brand-logo-section">
+    <div class="container">
+        <div class="bb-row">
+            <div class="brand-wrap">
+                <div class="slick-slider">
+                    <div class="single-brand-logo" tabindex="-1" style="width: 100%; display: inline-block;" >
+                        <img src="1b.png" alt=""/>
+                    </div>
+                    <div class="single-brand-logo" tabindex="-1" style="width: 100%; display: inline-block;">
+                        <img src="2b.png" alt=""/>
+                    </div>
+                    <div class="single-brand-logo" tabindex="-1" style="width: 100%; display: inline-block;">
+                        <img src="3b.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer-one">
+    <div class="footer-widgets">
+        <div class="container">
+            <div class="f-row">
+               
+                    <div class="single-footer-widgets">
+                          <div class="f-widgets-title">
+                                <h2>Practices</h2>
+                          </div> 
+                          <div class="widgets-content">
+                                <a href=".#"> About</a>
+                                <a href=".#"> For patients</a>
+                                <a href=".#"> FAQ's</a>
+                                <a href=".#"> Contact us</a>
+                                <a href=".#"> Blog</a>
+                          </div> 
+                    </div>
+        
+                    <div class="single-footer-widgets">
+                          <div class="f-widgets-title">
+                                <h2>Resources</h2>
+                          </div> 
+                          <div class="widgets-content">
+                                <a href=".#"> New Patients</a>
+                                <a href=".#"> Meet the Team</a>
+                                <a href=".#"> Patient Form</a>
+                                <a href=".#"> Insurance</a>
+                                <a href=".#">Account Login</a>
+                          </div> 
+                    </div>
+
+                   <div class="single-footer-widgets">
+                          <div class="f-widgets-title">
+                                <h2>Services</h2>
+                          </div> 
+                          <div class="widgets-content">
+                                <a href=".#"> Dental Dictionary</a>
+                                <a href=".#"> Dental Sealands</a>
+                                <a href=".#"> Dental Implants</a>
+                                <a href=".#"> General Dentistry</a>
+                                <a href=".#">Sedation Dentistry</a>
+                          </div> 
+                    </div>
+                    <div class="single-footer-widgets">
+                          <div class="f-widgets-title">
+                                <h2>Our Address</h2>
+                          </div> 
+                          <div class="widgets-content">
+                                <a href=".#"> Datobbo Dentistry 5212 Cedar</a>
+                                <a href=".#"> Village Dr Mason, NY.</a>
+                                <a href=".#"> Phone:+1 3500 5867 340</a>
+                                <a href=".#"> Email:yourdomain@gmail.com</a>
+                                <a href=".#"> Fax:+1 675 5867 340</a>
+                          </div> 
+                    </div>
+                </section>
+               <section class="footer">  
+                <div class="footer-copyright">
+                        <p>
+                            "©"
+                            Copyright by Modina Theme - 2020
+                        </p>
+                </div>
+            </section>
+
+  </body>
+</html>
